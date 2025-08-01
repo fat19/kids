@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Stories - Kids World</title>
+    <meta name="description" content="Beautiful children's stories with interactive reading. Perfect for ages 4-10.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(135deg, #E3F2FD 0%, #FFF9C4 50%, #FCE4EC 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .font-baloo {
+            font-family: 'Baloo 2', cursive;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF6B6B;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        
+        .nav-links a:hover {
+            color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.1);
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        /* Stories Container */
+        .stories-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Story Cards */
+        .story-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 400px;
+        }
+        
+        .story-card.expanded {
+            max-height: 1000px;
+            transform: scale(1.02);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .story-icon {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        
+        .story-fox { background: linear-gradient(135deg, #A78BFA, #8B5CF6); }
+        .story-luna { background: linear-gradient(135deg, #60A5FA, #3B82F6); }
+        .story-benny { background: linear-gradient(135deg, #34D399, #10B981); }
+        
+        .story-content {
+            padding: 30px;
+        }
+        
+        .story-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .story-preview {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .story-full {
+            display: none;
+            color: #444;
+            line-height: 1.8;
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #FFF9C4, #E3F2FD);
+            border-radius: 15px;
+            border-left: 4px solid #FF6B6B;
+        }
+        
+        .story-full p {
+            margin-bottom: 15px;
+        }
+        
+        .story-btn {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .story-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stories-container {
+                grid-template-columns: 1fr;
+                padding: 0 15px 40px;
+            }
+            
+            .story-card {
+                margin: 0 10px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .story-card {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">📚</div>
+                <span>Kids Stories</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 class="font-baloo">📖 Magical Stories for Little Readers</h1>
+        <p>Discover wonderful adventures and learn valuable lessons</p>
+    </header>
+
+    <!-- Stories Container -->
+    <div class="stories-container">
+        
+        <!-- Story 1: Mr. Fox's Big Adventure -->
+        <div class="story-card" data-story="fox">
+            <div class="story-icon story-fox">🦊</div>
+            <div class="story-content">
+                <h3 class="story-title font-baloo">Mr. Fox's Big Adventure</h3>
+                <div class="story-preview">
+                    Join Mr. Fox on his exciting journey through the magical forest, where he learns about friendship, kindness, and the joy of helping others.
+                </div>
+                <div class="story-full">
+                    <p>Once upon a time, in a beautiful forest filled with tall trees and sparkling streams, lived a curious fox named Mr. Fox. One sunny morning, he decided to explore parts of the forest he had never seen before.</p>
+                    <p>As he wandered deeper into the woods, Mr. Fox met Mrs. Rabbit, who was struggling to carry a basket of carrots. Without hesitation, Mr. Fox offered to help. Together, they delivered the carrots to all the forest animals.</p>
+                    <p>Mrs. Rabbit was so grateful that she invited Mr. Fox to a picnic. There, Mr. Fox learned that the greatest adventures aren't about where you go, but about the friends you make along the way.</p>
+                    <p>From that day forward, Mr. Fox became known as the kindest fox in the forest, always ready to lend a helping paw to anyone in need.</p>
+                </div>
+                <button class="story-btn" onclick="toggleStory('fox')">Read Story</button>
+            </div>
+        </div>
+
+        <!-- Story 2: Luna's Magical Library -->
+        <div class="story-card" data-story="luna">
+            <div class="story-icon story-luna">🦉</div>
+            <div class="story-content">
+                <h3 class="story-title font-baloo">Luna's Magical Library</h3>
+                <div class="story-preview">
+                    Discover a secret library where books come alive! Luna the owl finds magical stories that teach about courage and the power of imagination.
+                </div>
+                <div class="story-full">
+                    <p>In a cozy treehouse library, Luna the wise owl discovered something extraordinary. When the moon was full, the books would glow and their stories would come alive!</p>
+                    <p>One magical night, Luna opened a book about a brave little mouse. Suddenly, the mouse jumped out of the pages and invited Luna on an adventure through Storyland.</p>
+                    <p>They met characters from every book - dragons who told jokes, princesses who loved science, and pirates who shared their treasure. Each character taught Luna that every person has a special story worth sharing.</p>
+                    <p>Luna learned that books aren't just for reading - they're doorways to amazing worlds where anything is possible if you believe in yourself.</p>
+                </div>
+                <button class="story-btn" onclick="toggleStory('luna')">Read Story</button>
+            </div>
+        </div>
+
+        <!-- Story 3: Benny's Counting Garden -->
+        <div class="story-card" data-story="benny">
+            <div class="story-icon story-benny">🐰</div>
+            <div class="story-content">
+                <h3 class="story-title font-baloo">Benny's Counting Garden</h3>
+                <div class="story-preview">
+                    Help Benny the bunny grow a magical garden where flowers grow numbers! Learn counting while having fun with your new bunny friend.
+                </div>
+                <div class="story-full">
+                    <p>Benny the bunny had a very special garden where magic happened every day. Instead of regular flowers, his garden grew beautiful blooms with numbers on their petals!</p>
+                    <p>One sunny morning, Benny noticed that the flowers were wilting. He counted them: "One, two, three... oh no! Some are missing!" His friend Buzz the bee flew over to help.</p>
+                    <p>Together, they discovered that the flowers needed friendship to grow. For every kind act they did - sharing carrots with squirrels, helping birds build nests - new numbered flowers would bloom!</p>
+                    <p>By the end of the day, Benny's garden was more beautiful than ever, with flowers numbered 1 through 10. He learned that when we help others, wonderful things grow!</p>
+                </div>
+                <button class="story-btn" onclick="toggleStory('benny')">Read Story</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleStory(storyId) {
+            const storyCard = document.querySelector(`[data-story="${storyId}"]`);
+            const storyFull = storyCard.querySelector('.story-full');
+            const storyBtn = storyCard.querySelector('.story-btn');
+            const storyPreview = storyCard.querySelector('.story-preview');
+            
+            if (storyCard.classList.contains('expanded')) {
+                // Hide story
+                storyCard.classList.remove('expanded');
+                storyFull.style.display = 'none';
+                storyPreview.style.display = 'block';
+                storyBtn.textContent = 'Read Story';
+            } else {
+                // Show story
+                storyCard.classList.add('expanded');
+                storyFull.style.display = 'block';
+                storyPreview.style.display = 'none';
+                storyBtn.textContent = 'Hide Story';
+                
+                // Smooth scroll
+                storyCard.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+    </script>
+</body>
+</html>
