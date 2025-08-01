@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning - MiniWorld</title>
+    <meta name="description" content="Interactive learning activities for kids aged 4-10. Learn ABCs, numbers, shapes, and more with fun games and progress tracking.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+        .font-baloo {
+            font-family: 'Baloo 2', cursive;
+        }
+        
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+        
+        .learning-card {
+            transition: all 0.3s ease;
+        }
+        .learning-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        
+        .bg-gradient-sky {
+            background: linear-gradient(135deg, #87CEEB 0%, #98D8E8 100%);
+        }
+        .bg-gradient-yellow {
+            background: linear-gradient(135deg, #FFE66D 0%, #FFD93D 100%);
+        }
+        .bg-gradient-pink {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+        }
+        .bg-gradient-green {
+            background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+        }
+        .bg-gradient-purple {
+            background: linear-gradient(135deg, #DDA0DD 0%, #DA70D6 100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-sky min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-pink rounded-full flex items-center justify-center animate-bounce-slow">
+                        <span class="text-white font-baloo text-xl">🌟</span>
+                    </div>
+                    <span class="font-baloo text-2xl text-pink-600">MiniWorld</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Home</a>
+                    <a href="games.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Games</a>
+                    <a href="stories.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Stories</a>
+                    <a href="learning.html" class="text-pink-600 font-bold text-lg hover:text-pink-800 transition-colors">Learning</a>
+                    <a href="about.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">About</a>
+                    <a href="contact.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-pink-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-16 bg-gradient-green/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-baloo text-5xl md:text-6xl text-gray-800 mb-4">Let's Learn Together!</h1>
+            <p class="text-xl text-gray-600">Fun and interactive lessons for curious minds</p>
+        </div>
+    </section>
+
+    <!-- Progress Overview -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <h2 class="font-baloo text-3xl text-gray-800 mb-6 text-center">Your Learning Journey</h2>
+                
+                <div class="space-y-6">
+                    <!-- Overall Progress -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-baloo text-lg text-gray-800">Overall Progress</span>
+                            <span class="font-baloo text-pink-600">⭐ 15 Stars Earned</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                            <div class="bg-gradient-pink h-4 rounded-full progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Daily Streak -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto mb-3 bg-gradient-yellow rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🔥</span>
+                        </div>
+                        <h3 class="font-baloo text-xl text-gray-800">5 Day Streak!</h3>
+                        <p class="text-gray-600">Keep learning every day!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Categories -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Alphabet Learning -->
+                <div class="learning-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-sky rounded-full flex items-center justify-center">
+                        <span class="text-5xl">🔤</span>
+                    </div>
+                    <h3 class="font-baloo text-3xl text-gray-800 mb-4 text-center">ABC Learning</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-700">Letters A-M</span>
+                                <span class="text-pink-600">⭐⭐⭐</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-sky h-3 rounded-full progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-700">Letters N-Z</span>
+                                <span class="text-pink-600">⭐⭐</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-sky h-3 rounded-full progress-bar" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-gradient-sky text-white font-baloo py-3 rounded-full hover:scale-105 transition-transform">
+                        Continue Learning
+                    </button>
+                </div>
+
+                <!-- Numbers Learning -->
+                <div class="learning-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-pink rounded-full flex items-center justify-center">
+                        <span class="text-5xl">🔢</span>
+                    </div>
+                    <h3 class="font-baloo text-3xl text-gray-800 mb-4 text-center">Numbers & Counting</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-700">Counting 1-10</span>
+                                <span class="text-pink-600">⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-pink h-3 rounded-full progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-700">Addition Basics</span>
+                                <span class="text-pink-600">⭐⭐</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-pink h-3 rounded-full progress-bar" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-gradient-pink text-white font-baloo py-3 rounded-full hover:scale-105 transition-transform">
+                        Continue Learning
+                    </button>
+                </div>
+
+                <!-- Shapes Learning -->
+                <div class="learning-card bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-green rounded-full flex items-center justify-center">
+                        <span class="text-5xl">⭕</span>
+                    </div>
+                    <h3 class="font-baloo text-3xl text-gray-800 mb-4 text-center">Shapes & Colors</h3>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-700">Basic Shapes</span>
+                                <span class="text-pink-600">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-green h-3 rounded-full progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-700">Color Mixing</span>
+                                <span class="text-pink-600">⭐⭐⭐</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-green h-3 rounded-full progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-gradient-green text-white font-baloo py-3 rounded-full hover:scale-105 transition-transform">
+                        Continue Learning
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Activities -->
+    <section class="py-16 bg-gradient-yellow/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-baloo text-3xl text-gray-800 mb-8 text-center">Quick Learning Activities</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Letter of the Day -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-sky rounded-full flex items-center justify-center">
+                        <span class="text-2xl font-baloo">A</span>
+                    </div>
+                    <h3 class="font-baloo text-lg mb-2">Letter of the Day</h3>
+                    <p class="text-gray-600 text-sm mb-3">Learn words that start with 'A'</p>
+                    <button class="bg-gradient-sky text-white font-baloo px-4 py-2 rounded-full text-sm hover:scale-105 transition-transform">
+                        Start
+                    </button>
+                </div>
+
+                <!-- Number Game -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-pink rounded-full flex items-center justify-center">
+                        <span class="text-2xl">5️⃣</span>
+                    </div>
+                    <h3 class="font-baloo text-lg mb-2">Count to 5</h3>
+                    <p class="text-gray-600 text-sm mb-3">Practice counting objects</p>
+                    <button class="bg-gradient-pink text-white font-baloo px-4 py-2 rounded-full text-sm hover:scale-105 transition-transform">
+                        Start
+                    </button>
+                </div>
+
+                <!-- Shape Hunt -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-green rounded-full flex items-center justify-center">
+                        <span class="text-2xl">🔺</span>
+                    </div>
+                    <h3 class="font-baloo text-lg mb-2">Shape Hunt</h3>
+                    <p class="text-gray-600 text-sm mb-3">Find triangles around you</p>
+                    <button class="bg-gradient-green text-white font-baloo px-4 py-2 rounded-full text-sm hover:scale-105 transition-transform">
+                        Start
+                    </button>
+                </div>
+
+                <!-- Color Match -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-gradient-purple rounded-full flex items-center justify-center">
+                        <span class="text-2xl">🌈</span>
+                    </div>
+                    <h3 class="font-baloo text-lg mb-2">Color Match</h3>
+                    <p class="text-gray-600 text-sm mb-3">Match colors to objects</p>
+                    <button class="bg-gradient-purple text-white font-baloo px-4 py-2 rounded-full text-sm hover:scale-105 transition-transform">
+                        Start
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Badges -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-baloo text-3xl text-gray-800 mb-8 text-center">Your Achievement Badges</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3 bg-gradient-sky rounded-full flex items-center justify-center opacity-100">
+                        <span class="text-3xl">🏆</span>
+                    </div>
+                    <h3 class="font-baloo text-sm text-gray-800">ABC Master</h3>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3 bg-gradient-pink rounded-full flex items-center justify-center opacity-100">
+                        <span class="text-3xl">🎯</span>
+                    </div>
+                    <h3 class="font-baloo text-sm text-gray-800">Counting Star</h3>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3 bg-gradient-green rounded-full flex items-center justify-center opacity-100">
+                        <span class="text-3xl">🎨</span>
+                    </div>
+                    <h3 class="font-baloo text-sm text-gray-800">Shape Artist</h3>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3 bg-gray-300 rounded-full flex items-center justify-center opacity-50">
+                        <span class="text-3xl">⭐</span>
+                    </div>
+                    <h3 class="font-baloo text-sm text-gray-600">Super Learner</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-4 border-pink-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">For Parents</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="about.html" class="hover:text-pink-600 transition-colors">Safety Guidelines</a></li>
+                        <li><a href="about.html" class="hover:text-pink-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-600 transition-colors">Report Concerns</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="index.html" class="hover:text-pink-600 transition-colors">Home</a></li>
+                        <li><a href="games.html" class="hover:text-pink-600 transition-colors">Games</a></li>
+                        <li><a href="stories.html" class="hover:text-pink-600 transition-colors">Stories</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">Contact Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="mailto:hello@miniworld.com" class="text-2xl hover:text-pink-600 transition-colors">📧</a>
+                        <a href="contact.html" class="text-2xl hover:text-pink-600 transition-colors">💬</a>
+                        <span class="text-2xl">👨‍👩‍👧‍👦</span>
+                    </div>
+                    <p class="text-gray-600 mt-2">hello@miniworld.com</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-600">&copy; 2024 MiniWorld. Safe, fun, and educational for kids everywhere! 🌟</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for learning interactions -->
+    <script>
+        // Add click handlers for learning buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Start') || button.textContent.includes('Continue')) {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                        const activityName = this.closest('.learning-card, .bg-white')?.querySelector('h3')?.textContent || 'the activity';
+                        alert('🎓 Starting ' + activityName + '... This would open the interactive learning activity!');
+                    }, 150);
+                });
+            }
+        });
+
+        // Add hover effects
+        document.querySelectorAll('.learning-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animate progress bars on page load
+        window.addEventListener('load', function() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

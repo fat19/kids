@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MiniWorld</title>
+    <meta name="description" content="Get in touch with MiniWorld! Contact us for questions, feedback, or support. We're here to help parents and kids have the best experience.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+        .font-baloo {
+            font-family: 'Baloo 2', cursive;
+        }
+        
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #ec4899;
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+        }
+        
+        .bg-gradient-sky {
+            background: linear-gradient(135deg, #87CEEB 0%, #98D8E8 100%);
+        }
+        .bg-gradient-yellow {
+            background: linear-gradient(135deg, #FFE66D 0%, #FFD93D 100%);
+        }
+        .bg-gradient-pink {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+        }
+        .bg-gradient-green {
+            background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-sky min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-pink rounded-full flex items-center justify-center animate-bounce-slow">
+                        <span class="text-white font-baloo text-xl">🌟</span>
+                    </div>
+                    <span class="font-baloo text-2xl text-pink-600">MiniWorld</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Home</a>
+                    <a href="games.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Games</a>
+                    <a href="stories.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Stories</a>
+                    <a href="learning.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Learning</a>
+                    <a href="about.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">About</a>
+                    <a href="contact.html" class="text-pink-600 font-bold text-lg hover:text-pink-800 transition-colors">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-pink-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-16 bg-gradient-green/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-baloo text-5xl md:text-6xl text-gray-800 mb-4">Get in Touch!</h1>
+            <p class="text-xl text-gray-600">We'd love to hear from you! Questions, feedback, or just want to say hello?</p>
+        </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Email -->
+                <div class="contact-card bg-white rounded-3xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-sky rounded-full flex items-center justify-center">
+                        <span class="text-4xl">📧</span>
+                    </div>
+                    <h3 class="font-baloo text-2xl text-gray-800 mb-3">Email Us</h3>
+                    <p class="text-gray-600 mb-4">For general questions and support</p>
+                    <a href="mailto:hello@miniworld.com" class="text-pink-600 font-bold hover:text-pink-800 transition-colors">
+                        hello@miniworld.com
+                    </a>
+                </div>
+
+                <!-- Support -->
+                <div class="contact-card bg-white rounded-3xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-pink rounded-full flex items-center justify-center">
+                        <span class="text-4xl">💬</span>
+                    </div>
+                    <h3 class="font-baloo text-2xl text-gray-800 mb-3">Quick Support</h3>
+                    <p class="text-gray-600 mb-4">For technical issues and help</p>
+                    <a href="mailto:support@miniworld.com" class="text-pink-600 font-bold hover:text-pink-800 transition-colors">
+                        support@miniworld.com
+                    </a>
+                </div>
+
+                <!-- Feedback -->
+                <div class="contact-card bg-white rounded-3xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-yellow rounded-full flex items-center justify-center">
+                        <span class="text-4xl">💡</span>
+                    </div>
+                    <h3 class="font-baloo text-2xl text-gray-800 mb-3">Ideas & Feedback</h3>
+                    <p class="text-gray-600 mb-4">Share your thoughts and suggestions</p>
+                    <a href="mailto:ideas@miniworld.com" class="text-pink-600 font-bold hover:text-pink-800 transition-colors">
+                        ideas@miniworld.com
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16 bg-gradient-yellow/20">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <h2 class="font-baloo text-3xl text-gray-800 mb-6 text-center">Send us a Message</h2>
+                
+                <form id="contactForm" class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-lg font-baloo text-gray-800 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-4 py-3 border-2 border-gray-200 rounded-full form-input text-lg focus:border-pink-500 transition-colors"
+                               placeholder="What's your name?">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-lg font-baloo text-gray-800 mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-3 border-2 border-gray-200 rounded-full form-input text-lg focus:border-pink-500 transition-colors"
+                               placeholder="your@email.com">
+                    </div>
+                    
+                    <!-- Parent/Guardian Checkbox -->
+                    <div class="flex items-center">
+                        <input type="checkbox" id="parent" name="parent" 
+                               class="w-5 h-5 text-pink-600 border-2 border-gray-300 rounded focus:ring-pink-500">
+                        <label for="parent" class="ml-3 text-gray-700">
+                            I am a parent or guardian 👨‍👩‍👧‍👦
+                        </label>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-lg font-baloo text-gray-800 mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required 
+                                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl form-input text-lg focus:border-pink-500 transition-colors resize-none"
+                                  placeholder="Tell us what's on your mind..."></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" 
+                            class="w-full bg-gradient-pink text-white font-baloo text-xl py-4 rounded-full hover:scale-105 transition-transform">
+                        Send Message 🚀
+                    </button>
+                </form>
+                
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden mt-6 p-4 bg-green-100 border-2 border-green-300 rounded-2xl text-center">
+                    <span class="text-2xl">🎉</span>
+                    <p class="text-green-800 font-baloo text-lg mt-2">Thank you! Your message has been sent successfully.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-baloo text-3xl text-gray-800 mb-8 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-6">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="font-baloo text-xl text-gray-800 mb-3">Is MiniWorld really free?</h3>
+                    <p class="text-gray-600">Yes! MiniWorld is completely free for all children. We believe every child deserves access to quality educational content without any barriers.</p>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="font-baloo text-xl text-gray-800 mb-3">What age is MiniWorld for?</h3>
+                    <p class="text-gray-600">MiniWorld is designed for children aged 4-10 years old. Our content is carefully curated to be age-appropriate and engaging for this range.</p>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="font-baloo text-xl text-gray-800 mb-3">How do you keep kids safe?</h3>
+                    <p class="text-gray-600">We have no ads, no external links, no chat features, and no personal data collection. All content is reviewed by child development experts and educators.</p>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="font-baloo text-xl text-gray-800 mb-3">Can I track my child's progress?</h3>
+                    <p class="text-gray-600">Yes! Parents can see their child's learning progress, achievements, and time spent on different activities through our parent dashboard.</p>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="font-baloo text-xl text-gray-800 mb-3">Do you collect any personal information?</h3>
+                    <p class="text-gray-600">No, we don't collect any personal information from children. We're fully COPPA compliant and prioritize your child's privacy.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="py-16 bg-gradient-pink/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-baloo text-3xl text-gray-800 mb-4">Need Help Right Away?</h2>
+            <p class="text-gray-600 mb-6">For urgent safety concerns or technical issues</p>
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <p class="text-lg text-gray-700 mb-4">
+                    If you have any safety concerns or need immediate assistance, please contact us at:
+                </p>
+                <a href="mailto:urgent@miniworld.com" class="text-pink-600 font-bold text-xl hover:text-pink-800 transition-colors">
+                    urgent@miniworld.com
+                </a>
+                <p class="text-gray-600 mt-4">We respond to urgent messages within 2 hours during business hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-4 border-pink-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">For Parents</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="about.html" class="hover:text-pink-600 transition-colors">Safety Guidelines</a></li>
+                        <li><a href="about.html" class="hover:text-pink-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-600 transition-colors">Report Concerns</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="index.html" class="hover:text-pink-600 transition-colors">Home</a></li>
+                        <li><a href="games.html" class="hover:text-pink-600 transition-colors">Games</a></li>
+                        <li><a href="stories.html" class="hover:text-pink-600 transition-colors">Stories</a></li>
+                        <li><a href="learning.html" class="hover:text-pink-600 transition-colors">Learning</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">Contact Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="mailto:hello@miniworld.com" class="text-2xl hover:text-pink-600 transition-colors">📧</a>
+                        <a href="contact.html" class="text-2xl hover:text-pink-600 transition-colors">💬</a>
+                        <span class="text-2xl">👨‍👩‍👧‍👦</span>
+                    </div>
+                    <p class="text-gray-600 mt-2">hello@miniworld.com</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-600">&copy; 2024 MiniWorld. Safe, fun, and educational for kids everywhere! 🌟</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for form interactions -->
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const isParent = document.getElementById('parent').checked;
+            
+            // Simple validation
+            if (name && email && message) {
+                // Show success message
+                document.getElementById('successMessage').classList.remove('hidden');
+                
+                // Reset form
+                this.reset();
+                
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.add('hidden');
+                }, 5000);
+                
+                // In a real application, you would send this data to a server
+                console.log('Form submitted:', { name, email, message, isParent });
+            }
+        });
+
+        // Add hover effects
+        document.querySelectorAll('.contact-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add input focus effects
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#ec4899';
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.style.borderColor = '#e5e7eb';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
