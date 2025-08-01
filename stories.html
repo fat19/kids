@@ -106,26 +106,28 @@
         
         /* Stories Container */
         .stories-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px 60px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 35px;
         }
         
         /* Story Cards */
         .story-card {
             background: white;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            max-height: 400px;
+            max-height: 450px;
+            min-height: 450px;
         }
         
         .story-card.expanded {
-            max-height: 1000px;
+            max-height: 1200px;
+            min-height: 650px;
             transform: scale(1.02);
         }
         
@@ -135,11 +137,11 @@
         }
         
         .story-icon {
-            height: 200px;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
+            font-size: 6rem;
         }
         
         .story-fox { background: linear-gradient(135deg, #A78BFA, #8B5CF6); }
@@ -154,30 +156,36 @@
         .story-max { background: linear-gradient(135deg, #F97316, #EA580C); }
         
         .story-content {
-            padding: 30px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 220px);
         }
         
         .story-title {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         
         .story-preview {
             color: #666;
             margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            flex-grow: 1;
         }
         
         .story-full {
             display: none;
             color: #444;
-            line-height: 1.8;
+            line-height: 1.9;
             margin-top: 20px;
-            padding: 20px;
+            padding: 25px;
             background: linear-gradient(135deg, #FFF9C4, #E3F2FD);
-            border-radius: 15px;
-            border-left: 4px solid #FF6B6B;
+            border-radius: 20px;
+            border-left: 5px solid #FF6B6B;
+            font-size: 1.05rem;
         }
         
         .story-full p {
@@ -188,18 +196,38 @@
             background: linear-gradient(135deg, #FF6B6B, #FF8E53);
             color: white;
             border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
         
-        .story-btn:hover {
+        .story-close-btn {
+            background: linear-gradient(135deg, #6B7280, #4B5563);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .story-btn:hover, .story-close-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .story-close-btn:hover {
+            box-shadow: 0 5px 15px rgba(107, 114, 128, 0.4);
         }
         
         /* Responsive */
@@ -274,7 +302,10 @@
                     <p>Mrs. Rabbit was so grateful that she invited Mr. Fox to a picnic. There, Mr. Fox learned that the greatest adventures aren't about where you go, but about the friends you make along the way.</p>
                     <p>From that day forward, Mr. Fox became known as the kindest fox in the forest, always ready to lend a helping paw to anyone in need.</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('fox')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('fox')">Read Mr. Fox's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('fox')">Close Fox's Story</button>
+                </div>
             </div>
         </div>
 
@@ -292,7 +323,10 @@
                     <p>They met characters from every book - dragons who told jokes, princesses who loved science, and pirates who shared their treasure. Each character taught Luna that every person has a special story worth sharing.</p>
                     <p>Luna learned that books aren't just for reading - they're doorways to amazing worlds where anything is possible if you believe in yourself.</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('luna')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('luna')">Read Luna's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('luna')">Close Luna's Story</button>
+                </div>
             </div>
         </div>
 
@@ -310,7 +344,10 @@
                     <p>Together, they discovered that the flowers needed friendship to grow. For every kind act they did - sharing carrots with squirrels, helping birds build nests - new numbered flowers would bloom!</p>
                     <p>By the end of the day, Benny's garden was more beautiful than ever, with flowers numbered 1 through 10. He learned that when we help others, wonderful things grow!</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('benny')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('benny')">Read Benny's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('benny')">Close Benny's Story</button>
+                </div>
             </div>
         </div>
 
@@ -328,7 +365,10 @@
                     <p>As the day ended, a beautiful rainbow appeared. Daisy realized that just like flowers, every person has their own special color that makes the world more beautiful. She learned to celebrate all the different colors around her.</p>
                     <p>From that day on, Daisy greeted every color with joy, knowing that together they created the most wonderful garden of all.</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('daisy')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('daisy')">Read Daisy's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('daisy')">Close Daisy's Story</button>
+                </div>
             </div>
         </div>
 
@@ -346,7 +386,10 @@
                     <p>Finally, Toby returned to today and discovered his friends had planned a surprise picnic for him. "We missed you!" they cheered. Toby realized that while tomorrow is exciting, today is where the real magic happens.</p>
                     <p>From then on, Toby enjoyed every moment, knowing that the present is the best gift of all.</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('toby')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('toby')">Read Toby's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('toby')">Close Toby's Story</button>
+                </div>
             </div>
         </div>
 
@@ -364,7 +407,10 @@
                     <p>Together they created the most beautiful garden symphony! Animals from all around came to listen and dance. Milo learned that when everyone shares their unique sound, something magical happens.</p>
                     <p>Now every evening, the garden comes alive with music, and Milo knows that his purr is an important part of the song.</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('milo')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('milo')">Read Milo's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('milo')">Close Milo's Story</button>
+                </div>
             </div>
         </div>
 
@@ -382,7 +428,10 @@
                     <p>One by one, each animal passed on the kindness they received. Soon, the whole forest was buzzing with helpful acts - rabbits shared carrots, deer helped build nests, and even the grumpy badger smiled more.</p>
                     <p>Poppy realized that kindness is like a pebble in a pond - it creates ripples that reach far beyond what we can see. Every small act matters!</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('poppy')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('poppy')">Read Poppy's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('poppy')">Close Poppy's Story</button>
+                </div>
             </div>
         </div>
 
@@ -400,7 +449,10 @@
                     <p>They collected plastic bottles, old fishing nets, and other trash, turning it into art and useful tools. Slowly, the coral regained its colors, and the fish returned to play.</p>
                     <p>Ollie learned that when we work together, we can protect the beautiful world we share. Now he teaches everyone that small actions can make a big difference for our oceans.</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('ollie')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('ollie')">Read Ollie's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('ollie')">Close Ollie's Story</button>
+                </div>
             </div>
         </div>
 
@@ -418,7 +470,10 @@
                     <p>The next night, more fireflies came to Sophie for help. She realized that her gentle light was perfect for guiding tiny creatures. Soon, animals on the ground were making wishes on her star.</p>
                     <p>Sophie discovered that you don't have to be the biggest or brightest to make a difference. Her warm, steady light brought comfort to many, and she shone with happiness from within.</p>
                 </div>
-                <button class="story-btn" onclick="toggleStory('sophie')">Read Story</button>
+                <div class="story-buttons">
+                    <button class="story-btn" onclick="toggleStory('sophie')">Read Sophie's Story</button>
+                    <button class="story-close-btn" onclick="toggleStory('sophie')">Close Sophie's Story</button>
+                </div>
             </div>
         </div>
 
@@ -429,21 +484,24 @@
         function toggleStory(storyId) {
             const storyCard = document.querySelector(`[data-story="${storyId}"]`);
             const storyFull = storyCard.querySelector('.story-full');
-            const storyBtn = storyCard.querySelector('.story-btn');
             const storyPreview = storyCard.querySelector('.story-preview');
+            const readBtn = storyCard.querySelector('.story-btn');
+            const closeBtn = storyCard.querySelector('.story-close-btn');
             
             if (storyCard.classList.contains('expanded')) {
                 // Hide story
                 storyCard.classList.remove('expanded');
                 storyFull.style.display = 'none';
                 storyPreview.style.display = 'block';
-                storyBtn.textContent = 'Read Story';
+                readBtn.style.display = 'inline-block';
+                closeBtn.style.display = 'none';
             } else {
                 // Show story
                 storyCard.classList.add('expanded');
                 storyFull.style.display = 'block';
                 storyPreview.style.display = 'none';
-                storyBtn.textContent = 'Hide Story';
+                readBtn.style.display = 'none';
+                closeBtn.style.display = 'inline-block';
                 
                 // Smooth scroll
                 storyCard.scrollIntoView({
