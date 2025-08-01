@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniWorld - Fun & Safe Learning for Kids</title>
+    <meta name="description" content="Welcome to MiniWorld! A safe, fun, and educational platform for children aged 4-10 with games, stories, and learning activities.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Comic Neue and Baloo 2 -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+        }
+        .font-baloo {
+            font-family: 'Baloo 2', cursive;
+        }
+        
+        /* Custom animations */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(2deg); }
+            75% { transform: translateY(-5px) rotate(-2deg); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-in-up {
+            animation: slideInUp 0.6s ease-out;
+        }
+        
+        /* Custom gradient backgrounds */
+        .bg-gradient-sky {
+            background: linear-gradient(135deg, #87CEEB 0%, #98D8E8 100%);
+        }
+        .bg-gradient-yellow {
+            background: linear-gradient(135deg, #FFE66D 0%, #FFD93D 100%);
+        }
+        .bg-gradient-pink {
+            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+        }
+        .bg-gradient-green {
+            background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-sky min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-pink rounded-full flex items-center justify-center animate-bounce-slow">
+                        <span class="text-white font-baloo text-xl">🌟</span>
+                    </div>
+                    <span class="font-baloo text-2xl text-pink-600">MiniWorld</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-pink-600 font-bold text-lg hover:text-pink-800 transition-colors">Home</a>
+                    <a href="games.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Games</a>
+                    <a href="stories.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Stories</a>
+                    <a href="learning.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Learning</a>
+                    <a href="about.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">About</a>
+                    <a href="contact.html" class="text-gray-700 font-semibold text-lg hover:text-pink-600 transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-pink-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <!-- Mascot Image -->
+                <div class="mb-8">
+                    <div class="w-32 h-32 mx-auto bg-gradient-yellow rounded-full flex items-center justify-center animate-float shadow-lg">
+                        <span class="text-6xl">🦊</span>
+                    </div>
+                </div>
+                
+                <!-- Hero Title -->
+                <h1 class="font-baloo text-5xl md:text-7xl text-white mb-6 animate-slide-in-up">
+                    Welcome to <span class="text-yellow-300">MiniWorld!</span>
+                </h1>
+                
+                <!-- Hero Subtitle -->
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-in-up">
+                    Where learning meets fun in a safe, magical world designed just for kids!
+                </p>
+                
+                <!-- CTA Button -->
+                <button class="bg-gradient-pink text-white font-baloo text-xl px-8 py-4 rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl animate-slide-in-up">
+                    🚀 Explore Now
+                </button>
+            </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-yellow-200/30 rounded-full animate-bounce-slow"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-pink-200/30 rounded-full animate-float"></div>
+            <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-green-200/30 rounded-full animate-bounce-slow"></div>
+        </div>
+    </section>
+
+    <!-- What's Inside Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-baloo text-4xl md:text-5xl text-gray-800 mb-4">What's Inside?</h2>
+                <p class="text-xl text-gray-600">Discover our magical world of learning and fun!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Games Card -->
+                <div class="bg-gradient-yellow rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-4xl">🎮</span>
+                    </div>
+                    <h3 class="font-baloo text-2xl text-gray-800 mb-3">Games</h3>
+                    <p class="text-gray-600 mb-4">Fun and educational games that help kids learn while playing!</p>
+                    <a href="games.html" class="inline-block bg-white text-yellow-600 font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
+                        Play Games
+                    </a>
+                </div>
+                
+                <!-- Stories Card -->
+                <div class="bg-gradient-pink rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-4xl">📚</span>
+                    </div>
+                    <h3 class="font-baloo text-2xl text-gray-800 mb-3">Stories</h3>
+                    <p class="text-gray-600 mb-4">Magical stories that spark imagination and teach valuable lessons!</p>
+                    <a href="stories.html" class="inline-block bg-white text-pink-600 font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
+                        Read Stories
+                    </a>
+                </div>
+                
+                <!-- Learning Card -->
+                <div class="bg-gradient-green rounded-3xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-4xl">🎓</span>
+                    </div>
+                    <h3 class="font-baloo text-2xl text-gray-800 mb-3">Learning</h3>
+                    <p class="text-gray-600 mb-4">Interactive lessons that make learning ABCs and 123s super fun!</p>
+                    <a href="learning.html" class="inline-block bg-white text-green-600 font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
+                        Start Learning
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Characters Carousel -->
+    <section class="py-20 bg-gradient-sky/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-baloo text-4xl md:text-5xl text-gray-800 mb-4">Meet Our Friends!</h2>
+                <p class="text-xl text-gray-600">Your new best friends in MiniWorld</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Mr. Fox -->
+                <div class="bg-white rounded-3xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-yellow rounded-full flex items-center justify-center">
+                        <span class="text-5xl">🦊</span>
+                    </div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-2">Mr. Fox</h3>
+                    <p class="text-gray-600 text-sm">The clever adventurer who loves puzzles!</p>
+                </div>
+                
+                <!-- Luna the Owl -->
+                <div class="bg-white rounded-3xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-pink rounded-full flex items-center justify-center">
+                        <span class="text-5xl">🦉</span>
+                    </div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-2">Luna the Owl</h3>
+                    <p class="text-gray-600 text-sm">The wise storyteller with magical tales!</p>
+                </div>
+                
+                <!-- Benny the Bunny -->
+                <div class="bg-white rounded-3xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-green rounded-full flex items-center justify-center">
+                        <span class="text-5xl">🐰</span>
+                    </div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-2">Benny the Bunny</h3>
+                    <p class="text-gray-600 text-sm">The speedy learner who loves numbers!</p>
+                </div>
+                
+                <!-- Daisy the Bear -->
+                <div class="bg-white rounded-3xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-sky rounded-full flex items-center justify-center">
+                        <span class="text-5xl">🐻</span>
+                    </div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-2">Daisy the Bear</h3>
+                    <p class="text-gray-600 text-sm">The gentle giant who teaches kindness!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-4 border-pink-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Parental Info -->
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">For Parents</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="about.html" class="hover:text-pink-600 transition-colors">Safety Guidelines</a></li>
+                        <li><a href="about.html" class="hover:text-pink-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-600 transition-colors">Report Concerns</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="games.html" class="hover:text-pink-600 transition-colors">Games</a></li>
+                        <li><a href="stories.html" class="hover:text-pink-600 transition-colors">Stories</a></li>
+                        <li><a href="learning.html" class="hover:text-pink-600 transition-colors">Learning</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Social -->
+                <div>
+                    <h3 class="font-baloo text-xl text-gray-800 mb-4">Contact Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="mailto:hello@miniworld.com" class="text-2xl hover:text-pink-600 transition-colors">📧</a>
+                        <a href="contact.html" class="text-2xl hover:text-pink-600 transition-colors">💬</a>
+                        <span class="text-2xl">👨‍👩‍👧‍👦</span>
+                    </div>
+                    <p class="text-gray-600 mt-2">hello@miniworld.com</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-600">&copy; 2024 MiniWorld. Safe, fun, and educational for kids everywhere! 🌟</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for smooth scrolling and interactions -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.hover\:scale-105').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Add click animation to CTA button
+        document.querySelector('button').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1.05)';
+                // Scroll to the "What's Inside" section
+                document.querySelector('.bg-white').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }, 150);
+        });
+    </script>
+</body>
+</html>
